@@ -1,49 +1,60 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-*{
+ *{
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
 body{
     margin: 0;
-    padding: 0;
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     height: 100vh;
 }
-.container{
-    display: flex; 
-    width: 90vw;
-    height: 80vh;
-    
+.main-cont{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
-.panel{
+.container{
     display: flex;
     justify-content: center;
-    align-items: flex-end;
-    color: white;
-    text-align: center;
-    font-size: 2rem;
+    align-items: center;
+    width: 90vw;
+    height: 75vh;
+}
+.panel{
+    height: 75vh;
     background-size: auto 100%;
-    background-position: center;
     background-repeat: no-repeat;
-    flex: 0.5;
+    background-position: center;
     margin: 10px;
-    border-radius: 50px;
-    transition: flex 0.7s ease-in;
+    flex: 0.5;
     cursor: pointer;
+    color: white;
+    border-radius: 50px;
+    position: relative;
+    transition: flex 0.7s ease-in;
 }
 h3{
-    -webkit-text-stroke: 0.5px black;
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
     opacity: 0;
-    text-align: center;
+    transition: opacity 0.5s ease-in 0.5s;
 }
-div .active{
-    
+.active{
     flex: 5;
-    border-radius: 0px
 }
 .active h3{
-    transition: opacity 0.3s ease-in 0.3s;
     opacity: 1;
+}
+@media (max-width:480px) {
+    .panel:nth-child(4), .panel:last-child{
+        display: none;
+    }
+    .container{
+        width: 100vw;
+    }
 }
